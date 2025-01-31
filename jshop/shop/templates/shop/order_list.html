@@ -1,0 +1,6 @@
+<h1>Your Orders</h1>
+<ul>
+    {% for order in orders %}
+        <li>{{ order.product.name }} - Quantity: {{ order.quantity }} - Status: {{ order.status }}</li>
+    {% endfor %}
+</ul>

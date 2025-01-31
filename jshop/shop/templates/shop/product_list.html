@@ -1,0 +1,19 @@
+<ul>
+    <li><a href="{% url 'product_list' %}">All Categories</a></li>
+    {% for cat in categories %}
+        <li><a href="{% url 'product_list_by_category' category_slug=cat.slug %}">{{ cat.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% if category %}
+    <h1>Category: {{ category.name }}</h1>
+{% endif %}
+
+{% for product in products %}
+    <div>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    </div>
+{% endfor %}
