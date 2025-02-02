@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropshipping Store</title>
+</head>
+<body>
+    <header>
+        <h1>My Dropshipping Store</h1>
+        <nav>
+            <a href="{% url 'product_list' %}">Home</a>
+            {% for category in categories %}
+                <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+            {% endfor %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
